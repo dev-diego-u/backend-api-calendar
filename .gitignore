@@ -1,0 +1,10 @@
+# Dependencias
+node_modules/
+
+# Archivos compilados de TypeScript
+dist/
+
+.env
+
+# Configuración de editores
+.vscode/

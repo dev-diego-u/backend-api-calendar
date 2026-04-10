@@ -1,0 +1,60 @@
+{
+  // "exclude": [
+  //   "node_modules", // Ignora dependencias externas
+  //   "dist"          // Ignora archivos compilados
+  // ],
+  // "include": [
+  //   "src/**/*"      // Solo incluye archivos dentro de src
+  // ],
+
+  // "watchOptions": {
+  //   "excludeDirectories": [
+  //     "node_modules", // Ignora cambios en dependencias externas
+  //     "dist"          // Ignora cambios en archivos compilados
+  //   ]
+
+  // },
+
+  // Visit https://aka.ms/tsconfig to read more about this file
+  "compilerOptions": {
+    // Carpeta de entrada de los archivos fuente
+    "rootDir": "./src",
+    // Carpeta de salida para los archivos compilados
+    "outDir": "./dist",
+
+    // Usa módulos CommonJS (Node.js clásico)
+    "module": "commonjs",
+    // Versión de JavaScript de salida
+    "target": "es2020",
+    // Tipos de Node.js disponibles
+    "types": ["node"],
+
+    // Genera archivos .map para depuración
+    "sourceMap": true,
+    // Genera archivos de declaración .d.ts
+    "declaration": true,
+    // Genera mapas de declaración para .d.ts
+    "declarationMap": true,
+
+    // Chequeo estricto de índices no verificados
+    "noUncheckedIndexedAccess": true,
+    // Propiedades opcionales exactas
+    "exactOptionalPropertyTypes": true,
+
+    // Activa todas las comprobaciones estrictas
+    "strict": true,
+
+    // Permite importar módulos CommonJS con import default
+    "esModuleInterop": true,
+    // Trata cada archivo como un módulo independiente
+    "isolatedModules": true,
+    // Advierte sobre imports con efectos secundarios no verificados
+    "noUncheckedSideEffectImports": true,
+    // Permite importaciones por defecto sintéticas
+    "allowSyntheticDefaultImports": true,
+    // Detecta módulos en todos los archivos
+    "moduleDetection": "force",
+    // Omite chequeo de tipos en archivos de librerías
+    "skipLibCheck": true
+  }
+}
