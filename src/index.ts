@@ -38,14 +38,14 @@ const startServer = async () => {
 
   app.use(express.static(publicPath));
 
-  console.log({ publicPath });
+  // console.log({ publicPath });
 
   app.use("/api/auth", authRoutes);
   app.use("/api/events", eventsRoutes);
 
   //todas las demás rutas, servir el index.html para que React maneje el enrutamiento del frontend
   app.use("/{*splat}", (req: Request, res: Response) => {
-    res.sendFile(path.join(__dirname, "public/index.html"));
+    res.sendFile(path.join(publicPath, "index.html"));
   });
   // Conectar a la base de datos
   await connectDB();
