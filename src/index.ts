@@ -38,7 +38,7 @@ const startServer = async () => {
 
   app.use(express.static(publicPath));
 
-  // console.log({ publicPath });
+  console.log({ publicPath });
 
   app.use("/api/auth", authRoutes);
   app.use("/api/events", eventsRoutes);
