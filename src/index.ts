@@ -1,7 +1,8 @@
 // Archivo principal del servidor backend del calendario
 // Configura Express, CORS, rutas y conexión a BD
 
-import express from "express";
+import express, { Request, Response } from "express";
+import path from "path";
 import cors from "cors";
 import "dotenv/config";
 import authRoutes from "./routes/auth";
@@ -38,6 +39,9 @@ const startServer = async () => {
   app.use("/api/auth", authRoutes);
   app.use("/api/events", eventsRoutes);
 
+  app.use("/{*splat}", (req: Request, res: Response) => {
+    res.sendFile(path.join(__dirname, "public/index.html"));
+  });
   // Conectar a la base de datos
   await connectDB();
 
