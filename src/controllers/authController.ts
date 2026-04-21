@@ -28,7 +28,15 @@ export const loginController = async (req: Request, res: Response) => {
       uid: user._id.toString(),
       name: user.name,
     });
-    res.status(200).json({ ok: true, message: "Login exitoso", token });
+    res
+      .status(200)
+      .json({
+        ok: true,
+        message: "Login exitoso",
+        uid: user._id,
+        name: user.name,
+        token,
+      });
   } catch (error) {
     console.error("Error en loginController:", error);
     res.status(500).json({ ok: false, message: "Error en el servidor" });
