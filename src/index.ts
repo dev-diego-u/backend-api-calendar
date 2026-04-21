@@ -33,12 +33,17 @@ const startServer = async () => {
 
   // Middlewares básicos
   app.use(express.json()); // Parsear JSON
-  app.use(express.static("public")); // Servir archivos estáticos
 
-  // Rutas de la API
+  const publicPath = path.join(__dirname, "../public");
+
+  app.use(express.static(publicPath));
+
+  // console.log({ publicPath });
+
   app.use("/api/auth", authRoutes);
   app.use("/api/events", eventsRoutes);
 
+  //todas las demás rutas, servir el index.html para que React maneje el enrutamiento del frontend
   app.use("/{*splat}", (req: Request, res: Response) => {
     res.sendFile(path.join(__dirname, "public/index.html"));
   });
